@@ -1,0 +1,43 @@
+{
+  "addonId": "whispercpp",
+  "name": "whisper.cpp",
+  "description": "Offline speech-to-text powered by whisper.cpp (OpenAI Whisper models).",
+  "upstream": {
+    "openaiWhisper": "https://github.com/openai/whisper",
+    "whisperCpp": "https://github.com/ggml-org/whisper.cpp"
+  },
+  "packages": {
+    "windows": {
+      "x64": {
+        "default": {
+          "url": "https://downloads.sourceforge.net/project/whisper-cpp.mirror/v1.8.3/whisper-bin-x64.zip"
+        },
+        "blas": {
+          "url": "https://downloads.sourceforge.net/project/whisper-cpp.mirror/v1.8.3/whisper-blas-bin-x64.zip"
+        },
+        "binCandidates": [
+          "whisper-cli.exe",
+          "main.exe",
+          "whisper.exe"
+        ]
+      }
+    }
+  },
+  "models": {
+    "tiny": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.bin",
+    "base": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin",
+    "small": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin"
+  },
+  "capabilities": [
+    "speech-to-text",
+    "audio-transcribe-offline"
+  ],
+  "compatChecks": {
+    "platform": "Windows x64 only.",
+    "blasFallback": "If the user selects the BLAS variant, prefer it but fall back to the default package if required DLLs are missing.",
+    "extractionErrors": "If extraction or executable detection fails, show a friendly error with next steps."
+  },
+  "notes": [
+    "SourceForge downloads are community mirrors and are not affiliated with or endorsed by SourceForge, Inc."
+  ]
+}
