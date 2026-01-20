@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "manifests": [
+    {
+      "addonId": "whispercpp",
+      "path": "whispercpp/manifest.json"
+    }
+  ]
+}
